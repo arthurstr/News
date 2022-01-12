@@ -14,8 +14,9 @@ struct NewsTabView: View {
     var body: some View {
         NavigationView {
             ArticleListView(articles: articles)
-                .onAppear{
-                    async{
+                .overlay(overlayView)
+                .onAppear {
+                    async {
                         await articleNewsVM.loadArticles()
                     }
                 }
@@ -24,13 +25,19 @@ struct NewsTabView: View {
     }
     
     @ViewBuilder
-    private var overLayView: some View {
-        Group {
-        switch articleNewsVM.phase{
-        case .empty: ProgressView()
-            
-        default: EmptyView()
+    private var overlayView: some View {
+        
+        switch articleNewsVM.phase {
+        case .empty:
+            ProgressView()
+        case .success(let articles) where articles.isEmpty:
+            EmptyPlaceHolderView(text: "No Articles",image: nil)
+        case .failure(let error):
+            RetryView(text:  error.localizedDescription) {
+            //todo refresh the news API
         }
+            
+        default:EmptyView()
         }
     }
     
@@ -42,6 +49,8 @@ struct NewsTabView: View {
         }
     }
 }
+
+
 
 struct NewsTabView_Previews: PreviewProvider {
     static var previews: some View {

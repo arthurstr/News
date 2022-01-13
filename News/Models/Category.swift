@@ -12,9 +12,9 @@ enum Category: String, CaseIterable {
     case general
     case business
     case technology
-    case entartainment
+    case entertainment
     case sports
-    case sciences
+    case science
     case health
     
     var text: String {

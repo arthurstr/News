@@ -15,13 +15,9 @@ struct NewsTabView: View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-                .refreshable {
-                    loadTask()
-                }
-                .onAppear {
-                    loadTask()
-                }
-                .navigationTitle(articleNewsVM.selectedCategory.text)
+                .task(id: articleNewsVM.fetchTaskToken, loadTask)
+                .refreshable(action: refreshTask)
+                .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
                 .navigationBarItems(trailing: menu)
         }
     }
@@ -35,10 +31,7 @@ struct NewsTabView: View {
         case .success(let articles) where articles.isEmpty:
             EmptyPlaceHolderView(text: "No Articles",image: nil)
         case .failure(let error):
-            RetryView(text:  error.localizedDescription) {
-                loadTask()
-        }
-            
+            RetryView(text:  error.localizedDescription, retryAction: refreshTask)
         default:EmptyView()
         }
     }
@@ -51,15 +44,16 @@ struct NewsTabView: View {
         }
     }
     
-    private func loadTask() {
-        async {
-            await articleNewsVM.loadArticles()
-        }
+    @Sendable private func loadTask() async {
+        await articleNewsVM.loadArticles()
     }
     
+    @Sendable private func refreshTask(){
+        articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
+    }
     private var menu: some View {
         Menu {
-            Picker("Categpry",selection: $articleNewsVM.selectedCategory){
+            Picker("Categpry",selection: $articleNewsVM.fetchTaskToken.category){
                 ForEach(Category.allCases){
                     Text($0.text).tag($0)
                 }
@@ -74,7 +68,11 @@ struct NewsTabView: View {
 
 
 struct NewsTabView_Previews: PreviewProvider {
+    
+    @StateObject static var articleBookmarkVM = ArticleBookmarkViewModel.shared
+    
     static var previews: some View {
         NewsTabView(articleNewsVM: ArticleNewsViewModel(articles: Article.previewData))
+            .environmentObject(articleBookmarkVM)
     }
 }

@@ -19,7 +19,7 @@ struct RetryView: View {
                 .multilineTextAlignment(.center)
             
             Button (action: retryAction ){
-                Text("Try again")
+                Text(NSLocalizedString("Try again",comment: ""))
             }
         }
     }
@@ -27,7 +27,7 @@ struct RetryView: View {
 
 struct RetryView_Previews: PreviewProvider {
     static var previews: some View {
-        RetryView(text: "An error ocurred") {
+        RetryView(text: NSLocalizedString("An error ocurred",comment: "")) {
             
         }
     }

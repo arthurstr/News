@@ -15,7 +15,7 @@ struct SearchTabView: View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-                .navigationTitle("Search")
+                .navigationTitle(NSLocalizedString("Search",comment: ""))
         }
         .searchable(text: $searchVM.searchQuery){ suggestionsView }
         .onChange(of: searchVM.searchQuery) { newValue in
@@ -46,11 +46,11 @@ struct SearchTabView: View {
                     searchVM.searchQuery = newValue
                 }
             } else {
-                EmptyPlaceHolderView(text:"Type your query to search from NewsAPI",image: Image(systemName: "text.magnifyingglass"))
+                EmptyPlaceHolderView(text:NSLocalizedString("Type your query to search from NewsAPI",comment: ""),image: Image(systemName: "text.magnifyingglass"))
             }
             
         case .success(let articles) where articles.isEmpty:
-            EmptyPlaceHolderView(text:"No search result found",image: Image(systemName: "text.magnifyingglass"))
+            EmptyPlaceHolderView(text:NSLocalizedString("No search result found",comment: ""),image: Image(systemName: "text.magnifyingglass"))
             
             
         case .failure(let error):

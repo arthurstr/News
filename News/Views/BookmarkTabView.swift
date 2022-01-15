@@ -18,7 +18,7 @@ struct BookmarkTabView: View {
         NavigationView{
             ArticleListView(articles: articles)
                 .overlay(overlayView(isEmpty: articles.isEmpty))
-                .navigationTitle("Saved Articles")
+                .navigationTitle(NSLocalizedString("Saved Articles",comment: ""))
         }
         .searchable(text: $searchText)
     }
@@ -37,7 +37,7 @@ struct BookmarkTabView: View {
     @ViewBuilder
     func overlayView(isEmpty: Bool) -> some  View{
         if isEmpty {
-            EmptyPlaceHolderView(text:"No saved articles",image: Image(systemName: "bookmark"))
+            EmptyPlaceHolderView(text:NSLocalizedString("No saved articles",comment: ""),image: Image(systemName: "bookmark"))
         }
     }
 }

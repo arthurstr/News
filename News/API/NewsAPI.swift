@@ -61,7 +61,7 @@ struct NewsAPI {
         
         var url = "https://newsapi.org/v2/everything?"
         url += "apiKey=\(apiKey)"
-        url += "&language=ru"
+        url += "&language=\(NSLocalizedString("en",comment: ""))"
         url += "&q=\(percentEncodedString)"
         return URL(string: url)!
     }
@@ -69,7 +69,7 @@ struct NewsAPI {
     private func generateNewsURL(from category: Category) -> URL {
         var url = "https://newsapi.org/v2/top-headlines?"
         url += "apiKey=\(apiKey)"
-        url += "&language=ru"
+        url += "&language=\(NSLocalizedString("en",comment: ""))"
         url += "&category=\(category.rawValue)"
         return URL(string: url)!
     }

@@ -29,7 +29,7 @@ struct NewsTabView: View {
         case .empty:
             ProgressView()
         case .success(let articles) where articles.isEmpty:
-            EmptyPlaceHolderView(text: "No Articles",image: nil)
+            EmptyPlaceHolderView(text: NSLocalizedString("No Articles",comment: ""),image: nil)
         case .failure(let error):
             RetryView(text:  error.localizedDescription, retryAction: refreshTask)
         default:EmptyView()

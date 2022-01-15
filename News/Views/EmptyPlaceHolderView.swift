@@ -27,6 +27,6 @@ struct EmptyPlaceHolderView: View {
 
 struct EmptyPlaceHolderView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyPlaceHolderView(text: "No bookmark",image: Image(systemName: "bookmark") )
+        EmptyPlaceHolderView(text: NSLocalizedString("No bookmark",comment: ""),image: Image(systemName: "bookmark") )
     }
 }

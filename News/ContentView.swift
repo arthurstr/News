@@ -12,16 +12,16 @@ struct ContentView: View {
         TabView {
             NewsTabView()
                 .tabItem{
-                    Label("News",systemImage: "newspaper")
+                    Label(NSLocalizedString("News",comment: ""),systemImage: "newspaper")
                 }
             SearchTabView()
                 .tabItem{
-                    Label("Search",systemImage: "text.magnifyingglass")
+                    Label(NSLocalizedString("Search",comment: ""),systemImage: "text.magnifyingglass")
                 }
             
             BookmarkTabView()
                 .tabItem {
-                    Label("Saved",systemImage: "bookmark")
+                    Label(NSLocalizedString("Saved",comment: ""),systemImage: "bookmark")
                 }
         }
     }

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  News
+
+  Created by Arthur 😇 on 15.01.22.
+  
+*/
+
+"News" = "Новости";
+"en" = "ru";
+"Search" = "Поиск";
+"Saved" = "Закладки";
+"Saved Articles" = "Сохраненные статьи";
+"No saved articles" = "Нет сохраненных статей";
+"No bookmark" = "Нет заметок";
+"No Articles" = "Нет статей";
+"Try again" = "Попробуйте еще раз";
+"An error ocurred" = "Произошла ошибка";
+"Recently Searched" = "Недавно искали";
+"Clear" = "Очистить";
+"Delete" = "Удалить";
+"Type your query to search from NewsAPI" = "Введите запрос для поиска в NewsAPI" ;
+"No search result found" = "Ничего не найдено";

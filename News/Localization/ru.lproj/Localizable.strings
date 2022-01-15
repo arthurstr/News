@@ -21,3 +21,10 @@
 "Delete" = "Удалить";
 "Type your query to search from NewsAPI" = "Введите запрос для поиска в NewsAPI" ;
 "No search result found" = "Ничего не найдено";
+"Business" = "Бизнес";
+"Technology" = "Технологии";
+"Entertainment" = "Развлечение";
+"Sports" = "Спорт";
+"Science" = "Наука";
+"Health" = "Здоровье";
+"Top Headlines" = "Главные новости";

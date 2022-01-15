@@ -19,9 +19,9 @@ enum Category: String, CaseIterable {
     
     var text: String {
         if self == .general {
-            return "Top Headlines"
+            return NSLocalizedString("Top Headlines",comment: "")
         }
-        return rawValue.capitalized
+        return NSLocalizedString(rawValue.capitalized,comment: "")
     }
 }
 

@@ -59,7 +59,7 @@ struct NewsTabView: View {
                 }
             }
         } label:{
-            Image(systemName: "fiberchannel")
+            Image(systemName: "chart.bar.doc.horizontal")
                 .imageScale(.large)
         }
     }

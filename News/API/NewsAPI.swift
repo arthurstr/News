@@ -21,8 +21,8 @@ struct NewsAPI {
         return decoder
     }()
     
-    func fetch (from category: Category) async throws -> [Article] {
-        try await fetchArticles(from: generateNewsURL(from: category))
+    func fetch (from category: Category,from country: Country) async throws -> [Article] {
+        try await fetchArticles(from: generateNewsURL(from: category,from: country))
         
     }
     
@@ -66,10 +66,11 @@ struct NewsAPI {
         return URL(string: url)!
     }
     
-    private func generateNewsURL(from category: Category) -> URL {
+    private func generateNewsURL(from category: Category,from country: Country) -> URL {
         var url = "https://newsapi.org/v2/top-headlines?"
         url += "apiKey=\(apiKey)"
-        url += "&language=\(NSLocalizedString("en",comment: ""))"
+        //url += "&language=\(NSLocalizedString("ua",comment: ""))"
+        url += "&country=\(country.rawValue)"
         url += "&category=\(category.rawValue)"
         return URL(string: url)!
     }

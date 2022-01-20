@@ -13,8 +13,13 @@ enum DataFetchPhase<T> {
     case failure(Error)
 }
 
-struct FetchTaskToken: Equatable {
+struct FetchTaskTokenCategory: Equatable {
     var category: Category
+    var token: Date
+}
+
+struct FetchTaskTokenCountry: Equatable {
+    var country: Country
     var token: Date
 }
 
@@ -22,23 +27,32 @@ struct FetchTaskToken: Equatable {
 class ArticleNewsViewModel: ObservableObject {
     
     @Published var phase = DataFetchPhase<[Article]>.empty
-    @Published var fetchTaskToken: FetchTaskToken
-    private let newsAPI = NewsAPI.shared
+    @Published var fetchTaskTokenCountry: FetchTaskTokenCountry
+    @Published var fetchTaskTokenCategory: FetchTaskTokenCategory
     
-    init(articles: [Article]? = nil, selectedCategory: Category = .general) {
+    private let newsAPI = NewsAPI.shared
+    private let locale: NSLocale = NSLocale.current as NSLocale
+    private var country: String? {
+        get {
+            return locale.countryCode?.uppercased()
+        }
+    }
+    
+    init(articles: [Article]? = nil, selectedCategory: Category = .general,selectedCountry: Country = .ru) {
         if let articles = articles{
             self.phase = .success(articles)
         } else {
             self.phase = .empty
         }
-        self.fetchTaskToken = FetchTaskToken(category: selectedCategory,token: Date())
+        self.fetchTaskTokenCategory = FetchTaskTokenCategory(category: selectedCategory,token: Date())
+        self.fetchTaskTokenCountry =  FetchTaskTokenCountry(country: selectedCountry,token: Date())
     }
-        func loadArticles() async {
+    func loadArticles() async {
            // phase = .success(Article.previewData)
                      if Task.isCancelled {return}
             phase = .empty
             do {
-                let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
+                let articles = try await newsAPI.fetch(from: fetchTaskTokenCategory.category,from: fetchTaskTokenCountry.country)
                 if Task.isCancelled {return}
                 phase = .success(articles)
                 

@@ -23,6 +23,10 @@ struct ContentView: View {
                 .tabItem {
                     Label(NSLocalizedString("Saved",comment: ""),systemImage: "bookmark")
                 }
+            SettingsTabView()
+                .tabItem {
+                    Label(NSLocalizedString("Settings",comment: ""),systemImage: "gearshape")
+                }
         }
     }
 }

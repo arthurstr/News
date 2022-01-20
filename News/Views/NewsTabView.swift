@@ -11,13 +11,15 @@ struct NewsTabView: View {
     
     @StateObject var articleNewsVM = ArticleNewsViewModel()
 
+    
     var body: some View {
         NavigationView {
             ArticleListView(articles: articles)
                 .overlay(overlayView)
-                .task(id: articleNewsVM.fetchTaskToken, loadTask)
+                .task(id: articleNewsVM.fetchTaskTokenCategory, loadTask)
+                .task(id: articleNewsVM.fetchTaskTokenCountry, loadTask)
                 .refreshable(action: refreshTask)
-                .navigationTitle(articleNewsVM.fetchTaskToken.category.text)
+                .navigationTitle(articleNewsVM.fetchTaskTokenCategory.category.text)
                 .navigationBarItems(trailing: menu)
         }
     }
@@ -49,18 +51,31 @@ struct NewsTabView: View {
     }
     
     @Sendable private func refreshTask(){
-        articleNewsVM.fetchTaskToken = FetchTaskToken(category: articleNewsVM.fetchTaskToken.category, token: Date())
+        articleNewsVM.fetchTaskTokenCategory = FetchTaskTokenCategory(category: articleNewsVM.fetchTaskTokenCategory.category, token: Date())
+        articleNewsVM.fetchTaskTokenCountry = FetchTaskTokenCountry(country: articleNewsVM.fetchTaskTokenCountry.country, token: Date())
     }
     private var menu: some View {
+        HStack{
         Menu {
-            Picker("Categpry",selection: $articleNewsVM.fetchTaskToken.category){
+            Picker("Categpry",selection: $articleNewsVM.fetchTaskTokenCategory.category){
                 ForEach(Category.allCases){
                     Text($0.text).tag($0)
                 }
             }
         } label:{
-            Image(systemName: "chart.bar.doc.horizontal")
+            Image(systemName: "filemenu.and.selection")
                 .imageScale(.large)
+        }
+        Menu {
+            Picker("Country",selection: $articleNewsVM.fetchTaskTokenCountry.country){
+                    ForEach(Country.allCases){
+                        Text($0.text).tag($0)
+                    }
+                }
+            } label:{
+                Image(systemName: "globe.europe.africa")
+                    .imageScale(.large)
+            }
         }
     }
 }

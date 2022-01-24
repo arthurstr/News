@@ -12,21 +12,12 @@
       "size" : "20x20"
     },
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> parent of a131c40 (add onboarding)
       "filename" : "29.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of a425ba2 (add onboarding)
->>>>>>> parent of a131c40 (add onboarding)
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
@@ -48,10 +39,6 @@
       "size" : "40x40"
     },
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> parent of a131c40 (add onboarding)
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "57x57"
@@ -63,11 +50,6 @@
     },
     {
       "filename" : "120.png",
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of a425ba2 (add onboarding)
->>>>>>> parent of a131c40 (add onboarding)
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
@@ -111,10 +93,6 @@
       "size" : "40x40"
     },
     {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> parent of a131c40 (add onboarding)
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "50x50"
@@ -136,11 +114,6 @@
     },
     {
       "filename" : "76.png",
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of a425ba2 (add onboarding)
->>>>>>> parent of a131c40 (add onboarding)
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
@@ -161,10 +134,6 @@
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> parent of a131c40 (add onboarding)
     },
     {
       "filename" : "16.png",
@@ -217,11 +186,6 @@
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of a425ba2 (add onboarding)
->>>>>>> parent of a131c40 (add onboarding)
     }
   ],
   "info" : {

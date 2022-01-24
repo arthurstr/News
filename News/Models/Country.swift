@@ -21,12 +21,9 @@ enum Country: String, CaseIterable {
     var text: String {
         rawValue.capitalized
     }
-
 }
 
 
 extension Country:Identifiable{
     var id: Self {self}
 }
-
-

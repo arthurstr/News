@@ -29,19 +29,16 @@ class ArticleNewsViewModel: ObservableObject {
     @Published var phase = DataFetchPhase<[Article]>.empty
     @Published var fetchTaskTokenCountry: FetchTaskTokenCountry
     @Published var fetchTaskTokenCategory: FetchTaskTokenCategory
-    @Published var articleStatic = false
-    
-    public static let share = ArticleNewsViewModel();
     
     private let newsAPI = NewsAPI.shared
     private let locale: NSLocale = NSLocale.current as NSLocale
-    private var countryLocale: String? {
+    private var country: String? {
         get {
             return locale.countryCode?.uppercased()
         }
     }
-
-    init(articles: [Article]? = nil, selectedCategory: Category = .general,selectedCountry: Country = .us) {
+    
+    init(articles: [Article]? = nil, selectedCategory: Category = .general,selectedCountry: Country = .ru) {
         if let articles = articles{
             self.phase = .success(articles)
         } else {
@@ -51,9 +48,7 @@ class ArticleNewsViewModel: ObservableObject {
         self.fetchTaskTokenCountry =  FetchTaskTokenCountry(country: selectedCountry,token: Date())
     }
     func loadArticles() async {
-        if articleStatic {
-           phase = .success(Article.previewData)
-        } else {
+           // phase = .success(Article.previewData)
                      if Task.isCancelled {return}
             phase = .empty
             do {
@@ -66,6 +61,5 @@ class ArticleNewsViewModel: ObservableObject {
                 phase = .failure(error)
             }
         }
-    }
     
 }

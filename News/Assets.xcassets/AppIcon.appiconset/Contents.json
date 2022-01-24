@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
@@ -12,12 +11,15 @@
       "size" : "20x20"
     },
     {
+<<<<<<< HEAD
       "filename" : "29.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
@@ -28,7 +30,6 @@
       "size" : "29x29"
     },
     {
-      "filename" : "80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
@@ -39,6 +40,7 @@
       "size" : "40x40"
     },
     {
+<<<<<<< HEAD
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "57x57"
@@ -50,6 +52,8 @@
     },
     {
       "filename" : "120.png",
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
@@ -60,7 +64,6 @@
       "size" : "60x60"
     },
     {
-      "filename" : "20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
@@ -71,7 +74,6 @@
       "size" : "20x20"
     },
     {
-      "filename" : "29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
@@ -82,7 +84,6 @@
       "size" : "29x29"
     },
     {
-      "filename" : "40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
@@ -93,6 +94,7 @@
       "size" : "40x40"
     },
     {
+<<<<<<< HEAD
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "50x50"
@@ -114,6 +116,8 @@
     },
     {
       "filename" : "76.png",
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
@@ -124,16 +128,15 @@
       "size" : "76x76"
     },
     {
-      "filename" : "167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
+<<<<<<< HEAD
     },
     {
       "filename" : "16.png",
@@ -186,6 +189,8 @@
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
     }
   ],
   "info" : {

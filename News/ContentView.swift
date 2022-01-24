@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("currentPage") var currentPage = 1
     var body: some View {
-        if currentPage < 4 {
-        WalkthroughScreen()
-        } else {
         TabView {
             NewsTabView()
                 .tabItem{
@@ -31,7 +27,6 @@ struct ContentView: View {
                 .tabItem {
                     Label(NSLocalizedString("Settings",comment: ""),systemImage: "gearshape")
                 }
-        }
         }
     }
 }

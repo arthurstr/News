@@ -12,12 +12,15 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "filename" : "29.png",
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
 =======
 >>>>>>> parent of a425ba2 (add onboarding)
       "idiom" : "iphone",
@@ -41,6 +44,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "idiom" : "iphone",
       "scale" : "1x",
       "size" : "57x57"
@@ -52,6 +56,8 @@
     },
     {
       "filename" : "120.png",
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
 =======
 >>>>>>> parent of a425ba2 (add onboarding)
       "idiom" : "iphone",
@@ -94,6 +100,7 @@
       "size" : "40x40"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "idiom" : "ipad",
       "scale" : "1x",
@@ -118,6 +125,8 @@
       "filename" : "76.png",
 =======
 >>>>>>> parent of a425ba2 (add onboarding)
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
@@ -136,6 +145,7 @@
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
+<<<<<<< HEAD
 <<<<<<< HEAD
     },
     {
@@ -189,6 +199,8 @@
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
+=======
+>>>>>>> parent of a425ba2 (add onboarding)
 =======
 >>>>>>> parent of a425ba2 (add onboarding)
     }

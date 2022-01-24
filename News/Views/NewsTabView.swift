@@ -57,7 +57,7 @@ struct NewsTabView: View {
     private var menu: some View {
         HStack{
         Menu {
-            Picker("Categpry",selection: $articleNewsVM.fetchTaskTokenCategory.category){
+            Picker(NSLocalizedString("Category",comment: ""),selection: $articleNewsVM.fetchTaskTokenCategory.category){
                 ForEach(Category.allCases){
                     Text($0.text).tag($0)
                 }
@@ -67,9 +67,9 @@ struct NewsTabView: View {
                 .imageScale(.large)
         }
         Menu {
-            Picker("Country",selection: $articleNewsVM.fetchTaskTokenCountry.country){
+            Picker(NSLocalizedString("Country",comment: ""),selection: $articleNewsVM.fetchTaskTokenCountry.country){
                     ForEach(Country.allCases){
-                        Text($0.text).tag($0)
+                        Text((NSLocalizedString($0.text,comment: ""))).tag($0)
                     }
                 }
             } label:{

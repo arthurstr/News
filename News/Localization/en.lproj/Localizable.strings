@@ -22,5 +22,12 @@
 "Type your query to search from NewsAPI" = "Type your query to search from NewsAPI" ;
 "No search result found" = "No search result found";
 "Business" = "Business";
-"United State" = "us";
-"Russia" = "ru";
+"Us" = "United State";
+"Ru" = "Russia";
+"Gb" = "Great Britain";
+"Ua" = "Ukraine";
+"Pl" = "Poland";
+"Au" = "Australia";
+"Br" = "Brazil";
+"Category" = "Category";
+"Country" = "Country";

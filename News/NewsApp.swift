@@ -11,12 +11,14 @@ import SwiftUI
 struct NewsApp: App {
     
     @StateObject var articleBookmarkVM = ArticleBookmarkViewModel.shared
-    
+    @StateObject var notification = NotificationManager.shared
     
     var body: some Scene {
         WindowGroup {
+    
             ContentView()
-                .environmentObject(articleBookmarkVM)
+               .environmentObject(articleBookmarkVM)
+               .environmentObject(notification)
         }
     }
 }

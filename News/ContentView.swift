@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
+    
     @AppStorage("currentPage") var currentPage = 1
+    
     var body: some View {
         if currentPage < 4 {
         WalkthroughScreen()
@@ -27,13 +30,16 @@ struct ContentView: View {
                 .tabItem {
                     Label(NSLocalizedString("Saved",comment: ""),systemImage: "bookmark")
                 }
-            SettingsTabView()
+            SettingsView()
                 .tabItem {
                     Label(NSLocalizedString("Settings",comment: ""),systemImage: "gearshape")
                 }
         }
         }
+        
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -10,7 +10,7 @@ import SwiftUI
 struct NewsTabView: View {
     
     @StateObject var articleNewsVM = ArticleNewsViewModel()
-
+    
     
     var body: some View {
         NavigationView {
